@@ -3,6 +3,7 @@ import { Container } from '@mui/system';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Definations from './Components/Definations/Definations';
 import Header from './Components/Header/Header';
 
 function App() {
@@ -30,7 +31,13 @@ function App() {
   return (
     <div className="App" style={{height:'100vh',backgroundColor:"#282c34",color:'white'}}>
       <Container maxWidth="md" style={{display:"flex",flexDirection:"column",height:"100vh"}}>
-        <Header word={word} setWord={setWord}/>
+        <Header 
+        word={word} 
+        setWord={setWord}/>
+        {meanings && (<Definations 
+        word={word}
+        meanings={meanings}
+        />)}
       </Container>
     </div>
   );
